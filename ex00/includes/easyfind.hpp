@@ -14,5 +14,18 @@
 #define UNDERLINE		"\033[4m"
 #define BOLD_UNDERLINE	"\033[1;4m"
 
+#include <iostream>
+#include <exception>
+
+template <typename T>
+typename T::iterator	easyfind(T &container, const int n)
+{
+	typename T::iterator target;
+
+	target = std::find(container.begin(), container.end(), n);
+	if (target == container.end())
+		throw std::exception();
+	return (target);
+}
 
 #endif
