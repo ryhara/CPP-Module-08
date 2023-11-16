@@ -54,7 +54,52 @@ int main(void)
 			std::cout << *it << std::endl;
 			++it;
 		}
-
 		std::cout << std::endl;
+	}
+	{
+		std::cout << BOLD << "--- reverse test ---" << END << std::endl;
+		MutantStack<int> mstack;
+		mstack.push(5);
+		mstack.push(17);
+		std::cout << "mstack.top() = ";
+		std::cout << mstack.top() << std::endl;
+		mstack.pop();
+		std::cout << "mstack.size() = ";
+		std::cout <<  mstack.size() << std::endl;
+		mstack.push(3);
+		mstack.push(5);
+		mstack.push(737);
+		//[...]
+		mstack.push(0);
+		MutantStack<int>::reverse_iterator it = mstack.rbegin();
+		MutantStack<int>::reverse_iterator ite = mstack.rend();
+		++it;
+		--it;
+		std::cout << "print rbegin to rend" << std::endl;
+		while (it != ite) {
+			std::cout << *it << std::endl;
+			++it;
+		}
+		std::cout << std::endl;
+	}
+	{
+		std::cout << BOLD << "--- string test ---" << END << std::endl;
+		MutantStack<std::string> mstack;
+		mstack.push("hello");
+		mstack.push("world");
+		std::cout << "mstack.top() = ";
+		std::cout << mstack.top() << std::endl;
+		mstack.pop();
+		std::cout << "mstack.size() = ";
+		std::cout <<  mstack.size() << std::endl;
+		mstack.push("world");
+		mstack.push("42");
+		mstack.push("Tokyo");
+		MutantStack<std::string>::iterator it = mstack.begin();
+		MutantStack<std::string>::iterator ite = mstack.end();
+		while (it != ite) {
+			std::cout << *it << std::endl;
+			++it;
+		}
 	}
 }
