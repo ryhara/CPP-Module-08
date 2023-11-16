@@ -14,4 +14,27 @@
 #define UNDERLINE		"\033[4m"
 #define BOLD_UNDERLINE	"\033[1;4m"
 
+#include <iostream>
+#include <stack>
+
+
+template <typename T>
+class MutantStack : public std::stack<T>
+{
+	public:
+		MutantStack() : std::stack<T>() {}
+		MutantStack(const MutantStack &mutantstack) : std::stack<T>(mutantstack) {}
+		MutantStack &operator=(const MutantStack &mutantstack)
+		{
+			if (this != &mutantstack)
+				std::stack<T>::operator=(mutantstack);
+			return (*this);
+		}
+		~MutantStack() {}
+
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		iterator begin() { return (std::stack<T>::c.begin()); }
+		iterator end() { return (std::stack<T>::c.end()); }
+};
+
 #endif
