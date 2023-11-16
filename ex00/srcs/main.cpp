@@ -51,7 +51,7 @@ int main(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Not found" << END << std::endl;
+		std::cout << RED << e.what() << END << std::endl;
 	}
 	std::cout << std::endl;
 	std::cout << "-- list --" << std::endl;
@@ -62,7 +62,7 @@ int main(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Not found" << END << std::endl;
+		std::cout << RED << e.what() << END << std::endl;
 	}
 	std::cout << std::endl;
 	std::cout << "-- deque --" << std::endl;
@@ -73,7 +73,7 @@ int main(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Not found" << END << std::endl;
+		std::cout << RED << e.what() << END << std::endl;
 	}
 	std::cout << std::endl;
 	std::cout << "-- forward_list --" << std::endl;
@@ -84,7 +84,7 @@ int main(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Not found" << END << std::endl;
+		std::cout << RED << e.what() << END << std::endl;
 	}
 	std::cout << std::endl;
 	std::cout << "-- array --" << std::endl;
@@ -95,7 +95,7 @@ int main(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED << "Not found" << END << std::endl;
+		std::cout << RED << e.what() << END << std::endl;
 	}
 	return (0);
 }

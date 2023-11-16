@@ -24,7 +24,7 @@ typename T::iterator	easyfind(T &container, const int n)
 
 	target = std::find(container.begin(), container.end(), n);
 	if (target == container.end())
-		throw std::exception();
+		throw std::runtime_error("Not found");
 	return (target);
 }
 
