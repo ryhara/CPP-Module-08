@@ -106,6 +106,12 @@ int main(void)
 		{
 			std::cout << RED << e.what() << END << std::endl;
 		}
+		try {
+			std::cout << "span.longestSpan(): " << span.longestSpan() << std::endl;
+		} catch (std::exception &e)
+		{
+			std::cout << RED << e.what() << END << std::endl;
+		}
 	}
 
 	return (0);

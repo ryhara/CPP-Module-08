@@ -34,26 +34,26 @@ void	Span::addNumber(iterator begin, iterator end)
 	this->_v.insert(this->_v.end(), begin, end);
 }
 
-int		Span::shortestSpan(void)
+unsigned int		Span::shortestSpan(void)
 {
 	if (this->_v.size() <= 1)
 		throw NoSpanException();
 	std::sort(this->_v.begin(), this->_v.end());
-	int	span = this->_v[1] - this->_v[0];
+	unsigned int span = static_cast<unsigned int>(this->_v[1] - this->_v[0]);
 	for (unsigned int i = 2; i < this->_v.size(); i++)
 	{
-		if (this->_v[i] - this->_v[i - 1] < span)
-			span = this->_v[i] - this->_v[i - 1];
+		if (static_cast<unsigned int>(this->_v[i] - this->_v[i - 1]) < span)
+			span = static_cast<unsigned int>(this->_v[i] - this->_v[i - 1]);
 	}
 	return (span);
 }
 
-int		Span::longestSpan(void)
+unsigned int		Span::longestSpan(void)
 {
 	if (this->_v.size() <= 1)
 		throw NoSpanException();
 	std::sort(this->_v.begin(), this->_v.end());
-	return (this->_v[this->_v.size() - 1] - this->_v[0]);
+	return (static_cast<unsigned int>(this->_v[this->_v.size() - 1] - this->_v[0]));
 }
 
 unsigned int	Span::getN(void) const
